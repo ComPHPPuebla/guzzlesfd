@@ -1,0 +1,16 @@
+.settings
+.buildpath
+.project
+temp
+library
+application/configs
+application/modules
+vendor
+application.phar
+bootstrap.php
+bin
+data
+public
+src
+sql
+README.md

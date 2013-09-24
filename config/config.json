@@ -1,0 +1,113 @@
+{
+    "name": "Comunidad PHP",
+    "apiVersion": "1.0",
+    "baseUrl": "http://localhost/comphppuebla/guzzle/api",
+    "description": "Comunidad PHP REST API client",
+    "operations": {
+        "showContact": {
+            "httpMethod": "GET",
+            "uri": "contacts/{contactId}",
+            "summary": "Show the information of a given contact.",
+            "responseClass": "showContactOutput",
+            "parameters": {
+                "contactId": {
+                    "location": "uri",
+                    "type": "integer",
+                    "required": true
+                },
+                "accept": {
+                    "location": "header",
+                    "type": "string",
+                    "required": false,
+                    "default": "application/json",
+                    "sentAs": "Accept"
+                }
+            }
+        },
+        "newContact": {
+            "httpMethod": "POST",
+            "uri": "contacts",
+            "summary": "Create a new contact.",
+            "responseClass": "newContactOutput",
+            "parameters": {
+                "name": {
+                    "location": "postField",
+                    "type": "string"
+                },
+                "lastName": {
+                    "location": "postField",
+                    "type": "string",
+                    "sentAs": "last_name"
+                },
+                "accept": {
+                    "location": "header",
+                    "type": "string",
+                    "required": false,
+                    "default": "application/xml",
+                    "sentAs": "Accept"
+                }
+            }
+        },
+        "editContact": {
+            "httpMethod": "PUT",
+            "uri": "contacts/{contactId}",
+            "summary": "Edit the information of a given contact.",
+            "responseClass": "editContactOutput",
+            "parameters": {
+                "contactId": {
+                    "location": "uri",
+                    "type": "integer",
+                    "required": true
+                },
+                "name": {
+                    "location": "postField",
+                    "type": "string"
+                },
+                "lastName": {
+                    "location": "postField",
+                    "type": "string",
+                    "sentAs": "last_name"
+                },
+                "accept": {
+                    "location": "header",
+                    "type": "string",
+                    "required": false,
+                    "default": "application/json",
+                    "sentAs": "Accept"
+                }
+            }
+        },
+        "deleteContact": {
+            "httpMethod": "DELETE",
+            "uri": "contacts/{contactId}",
+            "summary": "Delete the information of a given contact.",
+            "parameters": {
+                "contactId": {
+                    "location": "uri",
+                    "type": "integer",
+                    "required": true
+                }
+            }
+        }
+    },
+    "models": {
+        "showContactOutput": {
+            "type": "object",
+            "additionalProperties": {
+                "location": "json"
+            }
+        },
+        "newContactOutput": {
+            "type": "object",
+            "additionalProperties": {
+                "location": "xml"
+            }
+        },
+        "editContactOutput": {
+            "type": "object",
+            "additionalProperties": {
+                "location": "json"
+            }
+        }
+    }
+}
