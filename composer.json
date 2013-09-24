@@ -1,4 +1,15 @@
 {
+    "name": "comphppuebla/guzzlesfd",
+    "description": "Software Freedom Day Puebla, Guzzle Workshop",
+    "homepage"    : "http://www.comunidadphppuebla.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luis Montealegre",
+            "email": "luis.montealegre@mandragora-web-systems.com",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "guzzle/guzzle": "v3.7.3",
         "slim/slim": "2.3.1",
