@@ -22,13 +22,15 @@ if ('application/xml' ===  $type) {
 	$template = 'contacts/show.xml.twig';
 }
 
-$loader = new FilesystemLoader('views');
-$environment = new Environment($loader);
+$viewLoader = new FilesystemLoader('views');
+$view = new Environment($viewLoader);
 
 $faker = Factory::create();
 
-echo $environment->render($template, [
+echo $view->render($template, [
 	'contact' => [
-		'contact_id' => $faker->randomDigit, 'name' => $faker->name, 'last_name' => $faker->lastName,
+		'contact_id' => $faker->randomDigit,
+		'name' => $faker->firstName,
+		'last_name' => $faker->lastName,
 	]
 ]);
